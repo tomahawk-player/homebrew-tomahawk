@@ -27,7 +27,7 @@ class Vlc < Formula
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is need to find some m4 macros installed by homebrew's pkg-config 
-    aclocal = "ACLOCAL_ARGS=\"/usr/local/share/aclocal\""
+    aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
     exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
     
