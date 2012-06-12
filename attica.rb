@@ -6,6 +6,7 @@ class Attica < Formula
   md5 'df3dcea0229cfa31539bdd427976e15b'
 
   depends_on 'cmake' => :build
+  depends_on 'qt'
 
   def install
     system "cmake #{std_cmake_parameters} ."
