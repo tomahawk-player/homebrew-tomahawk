@@ -20,9 +20,9 @@ class Tomahawk < Formula
   depends_on 'kde-phonon'
   depends_on 'quazip'
   depends_on 'attica'
-  depends_on 'lastfmlib'
 
   # upstream this formula
+  depends_on 'tomahawk-player/tomahawk/lastfmlib'
   depends_on 'tomahawk-player/tomahawk/clucene'
 
   # FIXME
