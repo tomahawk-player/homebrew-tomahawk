@@ -15,9 +15,9 @@ class Vlc < Formula
   depends_on 'flac'
 
   def patches
-      if MacOS.xcode_version.to_f >= 4.3
-  	'https://raw.github.com/gist/2915852/1bb32c300f6c0b1787f7ad396ec8d06596efb63a/vlc-buildsystem-fix-xcode-4.3'
-      end
+    if MacOS.xcode_version.to_f >= 4.3
+      'https://raw.github.com/gist/2915852/1bb32c300f6c0b1787f7ad396ec8d06596efb63a/vlc-buildsystem-fix-xcode-4.3'
+    end
   end
 
   def install
@@ -37,9 +37,9 @@ class Vlc < Formula
 
     exp = ""
     if MacOS.xcode_version.to_f >= 4.3
-        exp = "export #{aclocal}; export #{ldf}; export #{cfl}"
+      exp = "export #{aclocal}; export #{ldf}; export #{cfl}"
     else
-        exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
+      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
     end
 
     # Additional Libs
@@ -53,9 +53,9 @@ class Vlc < Formula
     # VLC
     system "#{exp}; ./bootstrap"
     if MacOS.xcode_version.to_f >= 4.3
-        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk"
     else
-        sdk = "/Developer/SDKs/MacOSX10.6.sdk"
+      sdk = "/Developer/SDKs/MacOSX10.6.sdk"
     end
     system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-asa --enable-macosx --with-macosx-sdk=#{sdk} -host=x86_64-apple-darwin10 --build=x86_64-apple-darwin9 --prefix=#{prefix}"
     system "#{exp}; cd build; make install"
