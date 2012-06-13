@@ -15,7 +15,7 @@ class KdePhonon < Formula
 
   def install
 # inreplace 'cmake/FindPhononInternal.cmake',
-    system "cmake #{std_cmake_parameters} ."
+    system "cmake #{std_cmake_parameters} -DPHONON_NO_DBUS=TRUE ."
     system "make install"
   end
 
