@@ -33,7 +33,7 @@ class Tomahawk < Formula
   depends_on 'qca'
   depends_on 'qca-ossl'
 
-# upstream these optional formulae
+  # upstream these optional formulae
   depends_on 'tomahawk-player/tomahawk/lastfmlib'
 
 
