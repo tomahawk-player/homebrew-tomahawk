@@ -2,8 +2,8 @@ require 'formula'
 
 class Attica < Formula
   homepage 'http://www.kde.org/'
-  url 'ftp://ftp.kde.org/pub/kde/stable/attica/attica-0.2.0.tar.bz2'
-  md5 'df3dcea0229cfa31539bdd427976e15b'
+  url 'ftp://ftp.kde.org/pub/kde/stable/attica/attica-0.4.0.tar.bz2'
+  md5 '2de3a49d79884ed3ce9df491bf35a86b'
 
   depends_on 'cmake' => :build
   depends_on 'qt'
