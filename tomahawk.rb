@@ -19,10 +19,9 @@ class Tomahawk < Formula
   depends_on 'libechonest'
   depends_on 'kde-phonon'
   depends_on 'quazip'
-  depends_on 'attica'
 
-  # upstream this formula
-  depends_on 'tomahawk-player/tomahawk/lastfmlib'
+  # upstream these formulae
+  depends_on 'tomahawk-player/tomahawk/attica'
   depends_on 'tomahawk-player/tomahawk/clucene'
 
   # FIXME
@@ -34,7 +33,8 @@ class Tomahawk < Formula
   depends_on 'qca'
   depends_on 'qca-ossl'
 
-
+# upstream these optional formulae
+  depends_on 'tomahawk-player/tomahawk/lastfmlib'
 
 
   def install
