@@ -35,15 +35,31 @@ class Vlc < Formula
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
+    if MacOS.xcode_version.to_f >= 4.3
+      if MacOS.mountain_lion?
+        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      else
+        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk"
+      end
+    else
+      sdk = "/Developer/SDKs/MacOSX10.6.sdk"
+    end
+
     exp = ""
     if MacOS.xcode_version.to_f >= 4.3
-      exp = "export #{aclocal}; export #{ldf}; export #{cfl}"
+      exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
     else
       exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
     end
 
+    if MacOS.mountain_lion?
+      darwinVer = "x86_64-apple-darwin10"
+    else
+      darwinVer = "x86_64-apple-darwin9"
+    end
+
     # Additional Libs
-    system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=x86_64-apple-darwin10 --build=x86_64-apple-darwin9"
+    system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer}"
     system "#{exp}; cd contrib/osx; make prebuilt"
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
@@ -52,12 +68,7 @@ class Vlc < Formula
 
     # VLC
     system "#{exp}; ./bootstrap"
-    if MacOS.xcode_version.to_f >= 4.3
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk"
-    else
-      sdk = "/Developer/SDKs/MacOSX10.6.sdk"
-    end
-    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-asa --enable-macosx --with-macosx-sdk=#{sdk} -host=x86_64-apple-darwin10 --build=x86_64-apple-darwin9 --prefix=#{prefix}"
+    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-asa --disable-macosx --disable-macosx-dialog-provider --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer}prefix=#{prefix}"
     system "#{exp}; cd build; make install"
   end
 end
