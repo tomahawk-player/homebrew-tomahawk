@@ -5,9 +5,9 @@ require 'formula'
 
 class Tomahawk < Formula
   homepage ''
-  url 'http://downloads.tomahawk-player.org/tomahawk-0.4.2.tar.bz2'
+  url 'http://downloads.tomahawk-player.org/tomahawk-0.5.5.tar.bz2'
   head 'git://github.com/tomahawk-player/tomahawk.git'
-  md5 '2c5aadf3c6a3a9b8b7c66ca29bbf88fb'
+  md5 '708602116a849c4739480cf52a98bc1a'
 
   # required:
   depends_on 'cmake' => :build
