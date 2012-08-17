@@ -52,7 +52,7 @@ class Qt < Formula
   def install
     # Apply binary git patch; normal patch ignores this.
     # TODO: Autodetect binary patches and apply them correctly.
-    system "git apply --exclude=*/QtWebKit.pro 002-homebrew.diff" if MacOS.mountain_lion?
+    system "git apply --exclude=*/QtWebKit.pro 003-homebrew.diff" if MacOS.mountain_lion?
 
     ENV.append "CXXFLAGS", "-fvisibility=hidden"
     args = ["-prefix", prefix,
