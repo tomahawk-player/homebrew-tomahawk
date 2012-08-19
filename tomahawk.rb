@@ -12,7 +12,7 @@ class Tomahawk < Formula
   # required:
   depends_on 'cmake' => :build
   depends_on 'pkgconfig' => :build
-  depends_on 'qt'
+  depends_on 'tomahawk-player/tomahawk/qt'
   depends_on 'qjson'
   depends_on 'taglib'
   depends_on 'boost'
