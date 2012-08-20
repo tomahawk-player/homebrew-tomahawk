@@ -46,15 +46,12 @@ class Vlc < Formula
       exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
     end
 
-    if MacOS.mountain_lion?
-      darwinVer = "x86_64-apple-darwin10"
-    else
-      darwinVer = "x86_64-apple-darwin9"
-    end
+    darwinVer = "x86_64-apple-darwin10"
 
     # Additional Libs
+    # KLN 20/08/2012 Added 'make .ogg' and 'make .vorbis' in order to get this recipe to work on OSX 10.6
     system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer}"
-    system "#{exp}; cd contrib/osx; make prebuilt"
+    system "#{exp}; cd contrib/osx; make prebuilt; make .ogg; make .vorbis"
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
     # to remove the .git folder just create a blank file so that this step passes 
