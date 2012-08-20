@@ -51,7 +51,10 @@ class Vlc < Formula
     # Additional Libs
     # KLN 20/08/2012 Added 'make .ogg' and 'make .vorbis' in order to get this recipe to work on OSX 10.6
     system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer}"
-    system "#{exp}; cd contrib/osx; make prebuilt; make .ogg; make .vorbis"
+    system "#{exp}; cd contrib/osx; make prebuilt"
+    if MacOS.xcode_version.to_f <= 4.2
+      system "make .ogg; make .vorbis"
+    end
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
     # to remove the .git folder just create a blank file so that this step passes 
