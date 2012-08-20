@@ -53,7 +53,7 @@ class Vlc < Formula
     system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer}"
     system "#{exp}; cd contrib/osx; make prebuilt"
     if MacOS.xcode_version.to_f <= 4.2
-      system "make .ogg; make .vorbis"
+      system "cd contrib/osx; make .ogg; make .vorbis"
     end
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
