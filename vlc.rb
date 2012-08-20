@@ -14,12 +14,6 @@ class Vlc < Formula
   depends_on 'libtool'
   depends_on 'flac'
 
-  def patches
-    if MacOS.xcode_version.to_f >= 4.3
-      'https://raw.github.com/gist/2915852/1bb32c300f6c0b1787f7ad396ec8d06596efb63a/vlc-buildsystem-fix-xcode-4.3'
-    end
-  end
-
   def install
     # Compiler
     cc =   "CC=/Developer/usr/bin/llvm-gcc-4.2"
