@@ -13,7 +13,7 @@ class Lastfmlib < Formula
   depends_on 'libsamplerate'
 
   def install
-    system "cmake  . -DBUILD_FINGERPRINT=ON #{std_cmake_parameters}"
+    system "cmake  . -DBUILD_FINGERPRINT=ON -DBUILD_TESTS=OFF #{std_cmake_parameters}"
     system "make install"
   end
 end
