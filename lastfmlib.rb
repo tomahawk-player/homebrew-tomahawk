@@ -9,7 +9,7 @@ class Lastfmlib < Formula
   depends_on 'qt'
 
   def install
-    system "cmake . #{std_cmake_parameters}"
+    system "cmake  . -DBUILD_FINGERPRINT=ON #{std_cmake_parameters}"
     system "make install"
   end
 end
