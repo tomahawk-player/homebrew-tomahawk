@@ -7,6 +7,10 @@ class Lastfmlib < Formula
 
   depends_on 'cmake'
   depends_on 'qt'
+  
+  # deps for the fingerprinting lib
+  depends_on 'fftw'
+  depends_on 'libsamplerate'
 
   def install
     system "cmake  . -DBUILD_FINGERPRINT=ON #{std_cmake_parameters}"
