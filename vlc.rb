@@ -62,7 +62,7 @@ class Vlc < Formula
 
     # VLC
     system "#{exp}; ./bootstrap"
-    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-asa --disable-macosx --disable-macosx-dialog-provider --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer} --prefix=#{prefix}"
+    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-ncurses --disable-asa --disable-macosx --disable-macosx-dialog-provider --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer} --prefix=#{prefix}"
     system "#{exp}; cd build; make install"
   end
 end
