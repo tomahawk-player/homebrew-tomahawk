@@ -5,6 +5,8 @@ class Clucene < Formula
   url 'http://downloads.sourceforge.net/project/clucene/clucene-core-unstable/2.3/clucene-core-2.3.3.4.tar.gz'
   md5 '48d647fbd8ef8889e5a7f422c1bfda94'
   head 'git://clucene.git.sourceforge.net/gitroot/clucene/clucene'
+  
+  depends_on 'cmake'
 
   def install
 #     if ARGV.build_head?
