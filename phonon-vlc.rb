@@ -32,7 +32,7 @@ class PhononVlc <Formula
 
   def patches
     # Turn of an additional phonon option
-    return [ "https://gist.github.com/raw/4380358/97108435bd490cf6840ae069a9f4c4c423052252/phononvlc-check-bundle-patch.diff",
+    return [ "https://gist.github.com/raw/4380358/16a7252c04c603e9d3c9a64d8b9c4c3adf97798e/phononvlc-check-bundle-patch.diff",
              "https://raw.github.com/gist/2916817/4bc649a2acd2eba1f15d72e0d77a36012ed50080/phonon-vlc-set-plugin-path.patch",
              "https://raw.github.com/gist/4105819/670e93027417ec36ff730ada6abbc2e8b305c3ae/phonon-vlc-optimize-debug" ]
   end
