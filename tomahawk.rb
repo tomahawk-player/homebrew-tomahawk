@@ -10,7 +10,7 @@ class Tomahawk < Formula
   md5 '708602116a849c4739480cf52a98bc1a'
 
   # required:
-  depends_on 'cmake' => :build
+  depends_on 'tomahawk-player/tomahawk/cmake' => :build
   depends_on 'pkgconfig' => :build
   depends_on 'tomahawk-player/tomahawk/qt'
   depends_on 'qjson'

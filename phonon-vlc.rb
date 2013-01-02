@@ -7,7 +7,7 @@ class PhononVlc <Formula
 
   head 'git://anongit.kde.org/phonon-vlc'
 
-  depends_on 'cmake' => :build
+  depends_on 'tomahawk-player/tomahawk/cmake' => :build
   depends_on 'xz' => :build
   depends_on 'kde-phonon'
   depends_on 'vlc'

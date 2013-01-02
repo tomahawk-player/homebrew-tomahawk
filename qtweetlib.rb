@@ -6,7 +6,7 @@ class Qtweetlib < Formula
   homepage 'https://github.com/minimoog/QTweetLib'
   md5 'bf1a7cf45eb63479bf5d81d807b0d518'
 
-  depends_on 'cmake'
+  depends_on 'tomahawk-player/tomahawk/cmake'
 
   def install
     system "cmake . #{std_cmake_parameters}"

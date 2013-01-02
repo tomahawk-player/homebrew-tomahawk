@@ -6,7 +6,7 @@ class Jreen < Formula
   md5 '84d483d59976fcbaa7951dd0acfa689a'
 
   depends_on 'qt'
-  depends_on 'cmake'
+  depends_on 'tomahawk-player/tomahawk/cmake'
   depends_on 'qca'
   depends_on 'qca-ossl'
 

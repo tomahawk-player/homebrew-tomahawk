@@ -5,7 +5,7 @@ class Libechonest < Formula
   url 'http://files.lfranchi.com/libechonest-2.0.1.tar.bz2'
   sha1 '5dd98ffb370e0e199e37ece4a1775a05594f3dcb'
 
-  depends_on 'cmake' => :build
+  depends_on 'tomahawk-player/tomahawk/cmake' => :build
   depends_on 'qt'
   depends_on 'qjson'
 
