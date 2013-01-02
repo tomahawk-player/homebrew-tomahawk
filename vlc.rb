@@ -6,7 +6,6 @@ class Vlc < Formula
   head 'git://git.videolan.org/vlc/vlc-2.0.git'
 
   depends_on 'automake'
-  depends_on 'gnu-tar'
   depends_on 'pcre'
   depends_on 'gettext'
   depends_on 'libgcrypt'
