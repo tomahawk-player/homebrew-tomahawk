@@ -2,8 +2,8 @@ require 'formula'
 
 class Jreen < Formula
   head 'git://github.com/euroelessar/jreen.git'
-  url 'http://qutim.org/dwnl/39/libjreen-1.1.0.tar.bz2'
-  md5 '84d483d59976fcbaa7951dd0acfa689a'
+  url 'http://qutim.org/dwnl/44/libjreen-1.1.1.tar.bz2'
+  md5 '180c4a3356b6d5865292e33de2a29820'
 
   depends_on 'qt'
   depends_on 'tomahawk-player/tomahawk/cmake'
@@ -11,8 +11,6 @@ class Jreen < Formula
   depends_on 'qca-ossl'
 
   def install
-    #system "./configure", "--disable-debug", "--disable-dependency-tracking",
-    #                      "--prefix=#{prefix}"
     system "cmake . -DQCA2_INCLUDE_DIR=/usr/local/lib/qca.framework/Headers/ #{std_cmake_parameters}"
     system "make install"
   end
