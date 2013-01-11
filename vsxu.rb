@@ -1,6 +1,6 @@
 require 'formula'
 
-class Jreen < Formula
+class Vsxu < Formula
   head 'git://github.com/vovoid/vsxu.git'
 #  url ''
 #  md5 ''
