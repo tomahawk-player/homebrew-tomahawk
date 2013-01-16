@@ -23,6 +23,8 @@ class Qt < Formula
   option 'with-mysql', 'Enable MySQL plugin'
   option 'developer', 'Compile and link Qt with developer options'
 
+  depends_on :libpng
+
   depends_on "d-bus" if build.include? 'with-qtdbus'
   depends_on "mysql" if build.include? 'with-mysql'
   depends_on 'sqlite' if MacOS.version == :leopard
