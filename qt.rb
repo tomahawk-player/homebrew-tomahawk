@@ -2,8 +2,8 @@ require 'formula'
 
 class Qt < Formula
   homepage 'http://qt.nokia.com/'
-  url 'http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.3.tar.gz'
-  sha1 'bc352a283610e0cd2fe0dbedbc45613844090fcb'
+  url 'http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz'
+  sha1 'f5880f11c139d7d8d01ecb8d874535f7d9553198'
 
   bottle do
     sha1 'ff488747325cd6771fbf0b79156fd3833ff3af63' => :mountainlion
@@ -41,9 +41,11 @@ class Qt < Formula
   def install
     ENV.append "CXXFLAGS", "-fvisibility=hidden"
     args = ["-prefix", prefix,
-            "-system-zlib",
+            "-system-libpng", "-system-zlib",
             "-confirm-license", "-opensource",
             "-cocoa", "-fast" ]
+
+    args << "-L#{MacOS::X11.prefix}/lib" << "-I#{MacOS::X11.prefix}/include" if MacOS::X11.installed?
 
     args << "-platform" << "unsupported/macx-clang" if ENV.compiler == :clang
 
