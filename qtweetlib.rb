@@ -7,6 +7,7 @@ class Qtweetlib < Formula
   md5 'bf1a7cf45eb63479bf5d81d807b0d518'
 
   depends_on 'tomahawk-player/tomahawk/cmake'
+  depends_on 'qt'
 
   def install
     system "cmake . #{std_cmake_parameters}"
