@@ -28,7 +28,7 @@ class Tomahawk < Formula
   depends_on 'tomahawk-player/tomahawk/qtweetlib'
   depends_on 'tomahawk-player/tomahawk/jreen'
   depends_on 'qca'
-  depends_on 'qca-ossl'
+  depends_on 'tomahawk-player/tomahawk/qca-ossl'
 
   def install
     system "cmake . #{std_cmake_parameters}"
