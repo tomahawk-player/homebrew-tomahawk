@@ -16,26 +16,19 @@ class Tomahawk < Formula
   depends_on 'qjson'
   depends_on 'taglib'
   depends_on 'boost'
-  depends_on 'libechonest'
-  depends_on 'kde-phonon'
-  depends_on 'quazip'
-
-  # upstream these formulae
+  depends_on 'tomahawk-player/tomahawk/libechonest'
+  depends_on 'tomahawk-player/tomahawk/kde-phonon'
+  depends_on 'tomahawk-player/tomahawk/quazip'
   depends_on 'tomahawk-player/tomahawk/attica'
   depends_on 'tomahawk-player/tomahawk/clucene'
-
-  # FIXME
-  # depends_on 'phonon-vlc' # vlc.rb is currently broken
-
-  # optional:
-  depends_on 'qtweetlib'
-  depends_on 'jreen'
-  depends_on 'qca'
-  depends_on 'qca-ossl'
-
-  # upstream these optional formulae
+  depends_on 'tomahawk-player/tomahawk/phonon-vlc'
   depends_on 'tomahawk-player/tomahawk/lastfmlib'
 
+  # optional:
+  depends_on 'tomahawk-player/tomahawk/qtweetlib'
+  depends_on 'tomahawk-player/tomahawk/jreen'
+  depends_on 'qca'
+  depends_on 'qca-ossl'
 
   def install
     system "cmake . #{std_cmake_parameters}"
