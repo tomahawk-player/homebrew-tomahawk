@@ -14,6 +14,7 @@ class PhononVlc <Formula
   depends_on 'libogg'
   depends_on 'libvorbis'
   depends_on 'faad2'
+  depends_on 'qt'
 
   def install
     #make sure to use the keg-only kde-phonon not the phonon installed with qt
