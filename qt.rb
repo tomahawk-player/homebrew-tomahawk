@@ -32,7 +32,7 @@ class Qt < Formula
   def patches
     # fixes focus and keyboard input issues with Qt 4.8's QMacNativeViewWidget
     patches = [ "https://raw.github.com/gist/3374339/687f21298bcac34ece46d5b4ccfe92ddbcfb2c9c/qt-4.8-qmacnativewidget-fixes",
-                "https://gist.github.com/raw/4553941/92a097af511b0763bbe22615ed8c0e63249f7cf3/QTBUG-27634-revert.diff" ]
+                "https://gist.github.com/raw/4553941/818f1dfa256ce251bb95ad554356634e48aab839/QTBUG-27634-revert.diff" ]
     # Fixes compilation failure on Leopard.
     # https://bugreports.qt-project.org/browse/QTBUG-23258
     if MacOS.version == :leopard
