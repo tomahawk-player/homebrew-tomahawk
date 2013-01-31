@@ -5,6 +5,7 @@ class Lastfmlib < Formula
   url 'http://cdn.last.fm/client/liblastfm-1.0.2.tar.gz'
   md5 '6822e4048a69a7f9afed6236cc555291'
 
+  depends_on 'cmake' => :build
   depends_on 'tomahawk-player/tomahawk/cmake'
   depends_on 'qt'
   
