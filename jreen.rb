@@ -2,7 +2,7 @@ require 'formula'
 
 class Jreen < Formula
   head 'git://github.com/euroelessar/jreen.git'
-  url 'http://qutim.org/dwnl/44/libjreen-1.1.1.tar.bz2'
+  url 'http://download.tomahawk-player.org/libjreen-1.1.1.tar.bz2'
   md5 '180c4a3356b6d5865292e33de2a29820'
 
   depends_on 'qt'
