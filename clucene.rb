@@ -6,7 +6,7 @@ class Clucene < Formula
   md5 '48d647fbd8ef8889e5a7f422c1bfda94'
   head 'git://clucene.git.sourceforge.net/gitroot/clucene/clucene'
   
-  depends_on 'tomahawk-player/tomahawk/cmake' => :build
+  depends_on 'cmake' => :build
 
   def install
 #     if ARGV.build_head?
