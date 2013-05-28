@@ -7,7 +7,7 @@ class Qtkeychain < Formula
   head 'https://github.com/frankosterfeld/qtkeychain.git', :using => :git
 
   depends_on 'cmake' => :build
-  # depends on Qt, but we want to accept a system Qt as well. How?
+  depends_on 'qt'
 
   def install
     system "cmake", ".", *std_cmake_args
