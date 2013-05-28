@@ -5,9 +5,9 @@ require 'formula'
 
 class Tomahawk < Formula
   homepage ''
-  url 'http://downloads.tomahawk-player.org/tomahawk-0.5.5.tar.bz2'
+  url 'http://downloads.tomahawk-player.org/tomahawk-0.7.0.tar.bz2'
   head 'git://github.com/tomahawk-player/tomahawk.git'
-  md5 '708602116a849c4739480cf52a98bc1a'
+#  md5 '708602116a849c4739480cf52a98bc1a'
 
   # required:
   depends_on 'cmake' => :build
@@ -23,7 +23,7 @@ class Tomahawk < Formula
   depends_on 'tomahawk-player/tomahawk/clucene'
   depends_on 'tomahawk-player/tomahawk/phonon-vlc'
   depends_on 'tomahawk-player/tomahawk/lastfmlib'
-  depends_on 'owncloud/owncloud/qtkeychain'
+  depends_on 'tomahawk-player/tomahawk/qtkeychain'
 
   # optional:
   depends_on 'tomahawk-player/tomahawk/qtweetlib'
