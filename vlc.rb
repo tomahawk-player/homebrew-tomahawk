@@ -5,6 +5,7 @@ class Vlc < Formula
   homepage 'http://www.videolan.org/vlc'
   head 'git://git.videolan.org/vlc/vlc-2.0.git'
 
+  depends_on 'intltool' => :build
   depends_on 'automake'
   depends_on 'pcre'
   depends_on 'gettext'
@@ -12,7 +13,6 @@ class Vlc < Formula
   depends_on 'libshout'
   depends_on 'libmad'
   depends_on 'libtool'
-  depends_on 'libintl'
   depends_on 'pkg-config'
   depends_on 'flac'
 
