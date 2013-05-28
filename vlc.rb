@@ -12,6 +12,8 @@ class Vlc < Formula
   depends_on 'libshout'
   depends_on 'libmad'
   depends_on 'libtool'
+  depends_on 'libintl'
+  depends_on 'pkg-config'
   depends_on 'flac'
 
   def install
