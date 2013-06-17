@@ -5,7 +5,7 @@ class Vsxu < Formula
 #  url ''
 #  md5 ''
 
-  depends_on 'tomahawk-player/tomahawk/cmake'
+  depends_on 'tomahawk-player/tomahawk/cmake' => :build
   depends_on 'glfw'
   depends_on 'glew'
   depends_on 'ftgl'
