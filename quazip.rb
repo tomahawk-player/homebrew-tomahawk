@@ -15,6 +15,6 @@ class Quazip < Formula
   end
 
   def patches
-  'https://raw.github.com/gist/1690173/965d6bde2e447f81b3a9c21dcc10675783f781cc/gistfile1.txt'
+  'https://gist.github.com/lfranchi/1690173/raw/965d6bde2e447f81b3a9c21dcc10675783f781cc/gistfile1.txt'
   end
 end
