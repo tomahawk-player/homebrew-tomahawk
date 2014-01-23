@@ -32,11 +32,7 @@ class Vlc < Formula
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
     if MacOS.xcode_version.to_f >= 5.0
-      if MacOS.mountain_lion?
-        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
-      else
-        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
-      end
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
     elsif MacOS.xcode_version.to_f >= 4.3
       if MacOS.mountain_lion?
         sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
