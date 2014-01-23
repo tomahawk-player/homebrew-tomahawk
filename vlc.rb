@@ -3,7 +3,7 @@ require 'formula'
 class Vlc < Formula
   # This is a HEAD only formula. the VLC guys say their tarballs are currently having build problems
   homepage 'http://www.videolan.org/vlc'
-  head 'git://git.videolan.org/vlc/vlc-2.0.git'
+  head 'git://git.videolan.org/vlc/vlc-2.1.git'
 
   depends_on 'intltool' => :build
   depends_on 'automake'
@@ -31,7 +31,13 @@ class Vlc < Formula
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
-    if MacOS.xcode_version.to_f >= 4.3
+    if MacOS.xcode_version.to_f >= 5.0
+      if MacOS.mountain_lion?
+        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
+      else
+        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
+      end
+    elsif MacOS.xcode_version.to_f >= 4.3
       if MacOS.mountain_lion?
         sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
       else
