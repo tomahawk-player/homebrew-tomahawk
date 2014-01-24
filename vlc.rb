@@ -53,7 +53,7 @@ class Vlc < Formula
     if MacOS.xcode_version.to_f >= 4.3
       exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
     else
-      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}"
+      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
     end
 
     darwinVer = "x86_64-apple-darwin10"
