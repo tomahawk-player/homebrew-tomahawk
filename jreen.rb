@@ -9,6 +9,7 @@ class Jreen < Formula
   depends_on 'qt'
   depends_on 'qca'
   depends_on 'qca-ossl'
+  depends_on 'gsasl'
 
   def install
     system "cmake . -DQCA2_INCLUDE_DIR=/usr/local/lib/qca.framework/Headers/ #{std_cmake_parameters}"
