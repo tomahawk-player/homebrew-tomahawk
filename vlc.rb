@@ -30,8 +30,8 @@ class Vlc < Formula
 
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
-    ldf = "LDFLAGS=-L#{gettext.lib} -lintl"
-    cfl = "CFLAGS=-I#{gettext.include}"
+    ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl\""
+    cfl = "CFLAGS=\"-I#{gettext.include}\""
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
@@ -49,11 +49,14 @@ class Vlc < Formula
       sdk = "/Developer/SDKs/MacOSX10.6.sdk"
     end
 
+    libt = "LIBTOOL=\"/usr/local/bin/glibtool --tag=CC\""
+    libtfl = "LIBTOOLFLAGS=--tag=CC"
+
     exp = ""
     if MacOS.xcode_version.to_f >= 4.3
       exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
     else
-      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
+      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
     end
 
     darwinVer = "x86_64-apple-darwin10"
@@ -72,7 +75,7 @@ class Vlc < Formula
 
     # VLC
     system "#{exp}; ./bootstrap"
-    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-ncurses --disable-asa --disable-macosx --disable-macosx-dialog-provider --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer} --prefix=#{prefix}"
+    system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-ncurses --disable-asa --disable-macosx --disable-macosx-dialog-provider --disable-libcddb --disable-cdda --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer} --prefix=#{prefix}"
     system "#{exp}; cd build; make install"
   end
 end
