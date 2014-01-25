@@ -32,7 +32,6 @@ class PhononVlc <Formula
   end
 
   def patches
-    return [ "https://gist.github.com/muesli/8618253/raw/800912c99712102e9d56d849db3b4081df4f4bca/phonon-vlc-oneinstance.patch" ]
+    return [ "https://gist.github.com/muesli/8618253/raw/937b41600de24c5a323581c6b8f6b27dfb20c378/phonon-vlc-oneinstance.patch" ]
   end
 end
-  
