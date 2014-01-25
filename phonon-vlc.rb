@@ -30,4 +30,9 @@ class PhononVlc <Formula
     system "rm -f #{pluginDir}/*"
     system "cp #{prefix}/lib/kde4/plugins/phonon_backend/phonon_vlc.so #{pluginDir}"
   end
+
+  def patches
+    return [ "https://gist.github.com/muesli/8618253/raw/800912c99712102e9d56d849db3b4081df4f4bca/phonon-vlc-oneinstance.patch" ]
+  end
 end
+  
