@@ -31,7 +31,8 @@ class Vlc < Formula
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
     ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl\""
-    cfl = "CFLAGS=\"-I#{gettext.include}\""
+    cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
+    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
@@ -54,9 +55,9 @@ class Vlc < Formula
 
     exp = ""
     if MacOS.xcode_version.to_f >= 4.3
-      exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}"
+      exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}"
     else
-      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
+      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
     end
 
     darwinVer = "x86_64-apple-darwin10"
