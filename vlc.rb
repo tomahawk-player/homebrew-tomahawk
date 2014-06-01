@@ -69,6 +69,8 @@ class Vlc < Formula
     if MacOS.xcode_version.to_f <= 4.2
       system "cd contrib/osx; make .ogg; make .vorbis"
     end
+    # libav/ffmpeg in current prebuilts is too old, build a fresh one from source
+    system "cd contrib/osx; make .ffmpeg"
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
     # to remove the .git folder just create a blank file so that this step passes 
