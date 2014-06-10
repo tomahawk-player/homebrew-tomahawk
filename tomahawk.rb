@@ -16,6 +16,7 @@ class Tomahawk < Formula
   depends_on 'qjson'
   depends_on 'taglib'
   depends_on 'boost'
+  depends_on 'google-sparsehash'
   depends_on 'libechonest'
   depends_on 'tomahawk-player/tomahawk/kde-phonon'
   depends_on 'tomahawk-player/tomahawk/quazip'
