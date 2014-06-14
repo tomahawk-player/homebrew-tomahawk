@@ -3,7 +3,7 @@ require 'formula'
 class Vlc < Formula
   # This is a HEAD only formula. the VLC guys say their tarballs are currently having build problems
   homepage 'http://www.videolan.org/vlc'
-  head 'git://git.videolan.org/vlc.git'
+  head 'git://git.videolan.org/vlc/vlc-2.2.git'
 
   depends_on 'intltool' => :build
   depends_on 'automake'
