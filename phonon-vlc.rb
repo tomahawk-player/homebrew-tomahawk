@@ -2,7 +2,7 @@ require 'formula'
 
 class PhononVlc <Formula
   homepage 'https://projects.kde.org/projects/kdesupport/phonon/phonon-vlc'
-  url "http://mirrors.mit.edu/kde/stable/phonon/phonon-backend-vlc/0.7.1/phonon-backend-vlc-0.7.1.tar.xz"
+  url "http://mirrors.mit.edu/kde/stable/phonon/phonon-backend-vlc/0.7.2/src/phonon-backend-vlc-0.7.2.tar.xz"
 #  md5 "d227b92619124a2b85e2d2e5f0fff90e"
 
   head 'git://anongit.kde.org/phonon-vlc'
@@ -29,9 +29,5 @@ class PhononVlc <Formula
     print "pluginDir: #{pluginDir} #{Formula.factory('qt').prefix}"
     system "rm -f #{pluginDir}/*"
     system "cp #{prefix}/lib/kde4/plugins/phonon_backend/phonon_vlc.so #{pluginDir}"
-  end
-
-  def patches
-    return [ "https://gist.github.com/muesli/8618253/raw/937b41600de24c5a323581c6b8f6b27dfb20c378/phonon-vlc-oneinstance.patch" ]
   end
 end
