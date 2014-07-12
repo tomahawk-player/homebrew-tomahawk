@@ -1,7 +1,7 @@
 require 'formula'
 
 class KdePhonon < Formula
-  url 'ftp://ftp.kde.org/pub/kde/stable/phonon/4.7.1/phonon-4.7.1.tar.xz'
+  url 'ftp://ftp.kde.org/pub/kde/stable/phonon/4.7.2/phonon-4.7.2.tar.xz'
   homepage 'http://phonon.kde.org/'
 #  md5 'bbe0c1c62ed14c31479c4c1a6cf1e173'
   head 'git://anongit.kde.org/phonon.git'
