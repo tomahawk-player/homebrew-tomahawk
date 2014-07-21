@@ -24,7 +24,7 @@ class Tomahawk < Formula
   depends_on 'tomahawk-player/tomahawk/clucene'
 #  depends_on 'tomahawk-player/tomahawk/phonon-vlc'
   depends_on 'tomahawk-player/tomahawk/lastfmlib'
-  depends_on 'tomahawk-player/tomahawk/qtkeychain'
+#  depends_on 'tomahawk-player/tomahawk/qtkeychain'
 
   # optional:
   depends_on 'tomahawk-player/tomahawk/qtweetlib'
