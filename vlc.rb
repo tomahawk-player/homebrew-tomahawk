@@ -32,8 +32,8 @@ class Vlc < Formula
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
     ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl\""
-    cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
-    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
+    cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.7\""
+    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7\""
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
@@ -42,11 +42,7 @@ class Vlc < Formula
     if MacOS.xcode_version.to_f >= 5.0
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
     elsif MacOS.xcode_version.to_f >= 4.3
-      if MacOS.mountain_lion?
-        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
-      else
-        sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk"
-      end
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
     else
       sdk = "/Developer/SDKs/MacOSX10.6.sdk"
     end
