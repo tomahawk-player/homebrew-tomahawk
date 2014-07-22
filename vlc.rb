@@ -23,7 +23,7 @@ class Vlc < Formula
     cxx =  "CXX=/Developer/usr/bin/llvm-g++-4.2"
     objc = "OBJC=/Developer/usr/bin/llvm-gcc-4.2"
 
-    if MacOS.version >= 10.8
+    if MacOS.version >= 10.7
       cc =   "CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
       cxx =  "CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
       objc = "OBJC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
