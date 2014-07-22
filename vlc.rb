@@ -51,7 +51,7 @@ class Vlc < Formula
     libtfl = "LIBTOOLFLAGS=--tag=CC"
 
     exp = ""
-    if MacOS.xcode_version.to_f >= 4.3
+    if MacOS.xcode_version.to_f >= 5.0
       exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}"
     else
       exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
