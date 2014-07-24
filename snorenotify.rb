@@ -10,7 +10,12 @@ class Snorenotify < Formula
   depends_on 'boost'
 
   def install
-    system "cmake . #{std_cmake_parameters}"
-    system "make install"
+    cfl = "CFLAGS=\"-mmacosx-version-min=10.7\""
+    cxxfl = "CXXFLAGS=\"-mmacosx-version-min=10.7\""
+    sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
+    exp = "export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}"
+
+    system "#{exp}; cmake . #{std_cmake_parameters}"
+    system "#{exp}; make install"
   end
 end
