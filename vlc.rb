@@ -27,7 +27,7 @@ class Vlc < Formula
       cc =   "CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
       cxx =  "CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
       objc = "OBJC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
-    end    
+    end
 
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
@@ -39,9 +39,9 @@ class Vlc < Formula
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
-    if MacOS.xcode_version.to_f >= 5.0
+    if MacOS.version >= 10.8
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
-    elsif MacOS.xcode_version.to_f >= 4.3
+    elsif MacOS.version >= 10.7
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
     else
       sdk = "/Developer/SDKs/MacOSX10.6.sdk"
