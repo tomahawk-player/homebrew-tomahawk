@@ -28,7 +28,6 @@ class Tomahawk < Formula
 #  depends_on 'tomahawk-player/tomahawk/phonon-vlc'
 
   # optional:
-  depends_on 'tomahawk-player/tomahawk/qtweetlib'
   depends_on 'tomahawk-player/tomahawk/jreen'
   depends_on 'qca'
   depends_on 'tomahawk-player/tomahawk/qca-ossl'
