@@ -6,6 +6,7 @@ class Lucenepp < Formula
   head 'https://github.com/luceneplusplus/LucenePlusPlus.git'
   
   depends_on 'cmake' => :build
+  depends_on 'boost'
 
   def install
     system "mkdir build && cd build && cmake #{std_cmake_parameters} .. && make install"
