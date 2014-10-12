@@ -7,8 +7,6 @@ class Snorenotify < Formula
 
   depends_on 'cmake' => :build
   depends_on 'qt'
-  depends_on 'cryptopp'
-  depends_on 'boost'
 
   def install
   
