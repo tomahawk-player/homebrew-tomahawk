@@ -6,7 +6,6 @@ class Snoregrowl < Formula
   sha1 '16b84d2fb673438c8250cefd95f7e4c145e4cf22'
 
   depends_on 'cmake' => :build
-  depends_on 'qt'
 
   def install
   
