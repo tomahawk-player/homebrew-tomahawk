@@ -2,8 +2,8 @@ require 'formula'
 
 class PhononVlc <Formula
   homepage 'https://projects.kde.org/projects/kdesupport/phonon/phonon-vlc'
-  url "http://mirrors.mit.edu/kde/stable/phonon/phonon-backend-vlc/0.8.0/src/phonon-backend-vlc-0.8.0.tar.xz"
-#  sha1 '635cd0232bd9df4a8a812c569bcf905f242671c3'
+  url "ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-vlc/0.8.0/phonon-backend-vlc-0.8.0.tar.xz"
+  sha1 '978f6b15539475e698533b0aeeb988b285a85894'
 
   head 'git://anongit.kde.org/phonon-vlc'
 
