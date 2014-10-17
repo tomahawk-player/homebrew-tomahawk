@@ -78,4 +78,23 @@ class Vlc < Formula
     system "#{exp}; mkdir -p build; cd build; ../extras/package/macosx/configure.sh --disable-ncurses --disable-asa --disable-macosx --disable-macosx-dialog-provider --disable-libcddb --disable-cdda --with-macosx-sdk=#{sdk} -host=#{darwinVer} --build=#{darwinVer} --prefix=#{prefix}"
     system "#{exp}; cd build; make install"
   end
+
+  def patches
+    DATA
+  end
 end
+
+__END__
+diff --git a/contrib/src/ffmpeg/rules.mak b/contrib/src/ffmpeg/rules.mak
+index 65d9cb8..153e898 100644
+--- a/contrib/src/ffmpeg/rules.mak
++++ b/contrib/src/ffmpeg/rules.mak
+@@ -8,7 +8,7 @@ ifdef USE_FFMPEG
+ HASH=313d75c
+ FFMPEG_SNAPURL := http://git.videolan.org/?p=ffmpeg.git;a=snapshot;h=$(HASH);sf=tgz
+ else
+-HASH=e8049af
++HASH=9bec3ca
+ FFMPEG_SNAPURL := http://git.libav.org/?p=libav.git;a=snapshot;h=$(HASH);sf=tgz
+ endif
+
