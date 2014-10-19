@@ -1,7 +1,7 @@
 require 'formula'
 
 class Websocketpp < Formula
-  head 'git://github.com/zaphoyd/websocketpp'
+  head 'git://github.com/zaphoyd/websocketpp', :branch => 'develop'
 
   depends_on 'cmake' => :build
   depends_on 'qt'
