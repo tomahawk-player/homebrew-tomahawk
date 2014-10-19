@@ -21,6 +21,7 @@ class PhononVlc <Formula
     phonon = Formula.factory("kde-phonon")
 
     system "cmake . #{std_cmake_parameters} -DPhonon_DIR:PATH=#{phonon.lib}/cmake/phonon"
+    system "make VERBOSE=1"
     system "make install"
     
     # phonon is dumb and just loads p lugins blindly from the qt plugin path. we're really sure we want to be loaded, so we delete any other
