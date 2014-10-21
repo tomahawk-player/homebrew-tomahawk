@@ -18,16 +18,9 @@ class Vlc < Formula
   depends_on 'yasm'
 
   def install
-    # Compiler
-    cc =   "CC=/Developer/usr/bin/llvm-gcc-4.2"
-    cxx =  "CXX=/Developer/usr/bin/llvm-g++-4.2"
-    objc = "OBJC=/Developer/usr/bin/llvm-gcc-4.2"
-
-    if MacOS.version >= 10.7
-      cc =   "CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
-      cxx =  "CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
-      objc = "OBJC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
-    end
+    cc =   "CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
+    cxx =  "CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
+    objc = "OBJC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
 
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
@@ -41,10 +34,8 @@ class Vlc < Formula
 
     if MacOS.version >= 10.8
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
-    elsif MacOS.version >= 10.7
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
     else
-      sdk = "/Developer/SDKs/MacOSX10.6.sdk"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
     end
 
     libt = "LIBTOOL=\"/usr/local/bin/glibtool --tag=CC\""
