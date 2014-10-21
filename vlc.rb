@@ -24,9 +24,9 @@ class Vlc < Formula
 
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
-    ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl -stdlib=c++\""
+    ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl -stdlib=libc++\""
     cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.7\""
-    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7 -stdlib=c++\""
+    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7 -stdlib=libc++\""
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
