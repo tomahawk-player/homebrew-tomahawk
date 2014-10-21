@@ -20,7 +20,7 @@ class PhononVlc <Formula
     #make sure to use the keg-only kde-phonon not the phonon installed with qt
     phonon = Formula.factory("kde-phonon")
 
-    system "cmake -DCMAKE_CXX_FLAGS=\"-stdlib=c++\" . #{std_cmake_parameters} -DPhonon_DIR:PATH=#{phonon.lib}/cmake/phonon"
+    system "cmake -DCMAKE_CXX_FLAGS=\"-stdlib=libc++\" . #{std_cmake_parameters} -DPhonon_DIR:PATH=#{phonon.lib}/cmake/phonon"
     system "make VERBOSE=1"
     system "make install"
     
