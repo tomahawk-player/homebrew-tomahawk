@@ -21,7 +21,7 @@ class Tomahawk < Formula
   depends_on 'quazip'
   depends_on 'tomahawk-player/tomahawk/kde-phonon'
   depends_on 'tomahawk-player/tomahawk/attica'
-  depends_on 'tomahawk-player/tomahawk/lucenepp'
+  depends_on 'tomahawk-player/tomahawk/lucenepp' => 'c++11'
   depends_on 'tomahawk-player/tomahawk/snorenotify'
   depends_on 'tomahawk-player/tomahawk/lastfmlib'
 #  depends_on 'tomahawk-player/tomahawk/qtkeychain'
