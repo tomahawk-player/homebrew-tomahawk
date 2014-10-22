@@ -17,7 +17,7 @@ class Lucenepp < Formula
   def install
     cmake_args = std_cmake_args
     if build.cxx11?
-        cmake_args << '-DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++"'
+        cmake_args << '-DCMAKE_CXX_FLAGS=-std=c++11 -stdlib=libc++'
     end
     mkdir 'build' do
         system 'cmake', '..', *cmake_args
