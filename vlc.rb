@@ -25,19 +25,29 @@ class Vlc < Formula
     # gettext is keg-only so make sure vlc finds it
     gettext = Formula.factory("gettext")
     ldf = "LDFLAGS=\"-L#{gettext.lib} -lintl\""
-    cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.7\""
-    cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7\""
+    cfl = ""
+    cxxfl = ""
     print "Adding libintl directly to the environment: #{ENV['LDFLAGS']} and #{ENV['CFLAGS']}"
 
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
-    if MacOS.version == 10.9
+    if MacOS.version >= 10.10
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.10\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
+    elsif MacOS.version >= 10.9
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
-    elsif MacOS.version == 10.8
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.9\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
+    elsif MacOS.version >= 10.8
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.8\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
     else
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.7\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7\""
     end
 
     libt = "LIBTOOL=\"/usr/local/bin/glibtool --tag=CC\""
