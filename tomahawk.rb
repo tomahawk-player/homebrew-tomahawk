@@ -12,12 +12,12 @@ class Tomahawk < Formula
   # required:
   depends_on 'cmake' => :build
   depends_on 'pkg-config' => :build
-#  depends_on 'tomahawk-player/tomahawk/qt'
   depends_on 'qjson'
   depends_on 'taglib'
   depends_on 'boost'
-  depends_on 'google-sparsehash'
   depends_on 'libechonest'
+  depends_on 'gnutls'
+  depends_on 'google-sparsehash'
   depends_on 'quazip'
   depends_on 'tomahawk-player/tomahawk/kde-phonon'
   depends_on 'tomahawk-player/tomahawk/attica'
