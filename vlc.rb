@@ -32,22 +32,22 @@ class Vlc < Formula
     # this is needed to find some m4 macros installed by homebrew's pkg-config 
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
-    if MacOS.version >= 10.10
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
-      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.10\""
-      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
-    elsif MacOS.version >= 10.9
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
-      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.9\""
-      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
-    elsif MacOS.version >= 10.8
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
-      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.8\""
-      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.8\""
+    if MacOS.version >= "10.10"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
+    elsif MacOS.version >= "10.9"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
+    elsif MacOS.version >= "10.8"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     else
       sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
-      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.7\""
-      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.7\""
+      cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
+      cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     end
 
     libt = "LIBTOOL=\"/usr/local/bin/glibtool --tag=CC\""
@@ -57,7 +57,7 @@ class Vlc < Formula
     if MacOS.xcode_version.to_f >= 5.0
       exp = "export #{aclocal}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}"
     else
-      exp = "export #{path}; export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
+      exp = "export #{aclocal}; export #{cc}; export #{cxx}; export #{objc}; export #{ldf}; export #{cfl}; export #{cxxfl}; export SDKROOT=#{sdk}; export #{libt}; export #{libtfl}; export OSX_VERSION=#{MacOS.version}"
     end
 
     darwinVer = "x86_64-apple-darwin10"
