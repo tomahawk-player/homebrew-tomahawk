@@ -33,15 +33,15 @@ class Vlc < Formula
     aclocal = "ACLOCAL_ARGS=\"-I /usr/local/share/aclocal\""
 
     if MacOS.version >= "10.10"
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk"
       cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
       cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     elsif MacOS.version >= "10.9"
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk"
       cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
       cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     elsif MacOS.version >= "10.8"
-      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk"
+      sdk = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
       cfl = "CFLAGS=\"-I#{gettext.include}  -mmacosx-version-min=10.6\""
       cxxfl = "CXXFLAGS=\" -mmacosx-version-min=10.6\""
     else
