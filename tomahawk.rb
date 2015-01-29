@@ -5,7 +5,7 @@ require 'formula'
 
 class Tomahawk < Formula
   homepage ''
-  url 'http://downloads.tomahawk-player.org/tomahawk-0.7.0.tar.bz2'
+  url 'http://downloads.tomahawk-player.org/tomahawk-0.8.2.tar.bz2'
   head 'git://github.com/tomahawk-player/tomahawk.git'
 #  md5 '708602116a849c4739480cf52a98bc1a'
 
@@ -28,8 +28,8 @@ class Tomahawk < Formula
 #  depends_on 'tomahawk-player/tomahawk/phonon-vlc'
 
   # optional:
-  depends_on 'tomahawk-player/tomahawk/jreen'
   depends_on 'qca'
+  depends_on 'tomahawk-player/tomahawk/jreen'
   depends_on 'tomahawk-player/tomahawk/qca-ossl'
 
   def install
