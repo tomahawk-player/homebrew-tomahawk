@@ -2,9 +2,8 @@ require 'formula'
 
 class PhononVlc <Formula
   homepage 'https://projects.kde.org/projects/kdesupport/phonon/phonon-vlc'
-  url "ftp://ftp.kde.org/pub/kde/stable/phonon/phonon-backend-vlc/0.8.0/phonon-backend-vlc-0.8.0.tar.xz"
-  sha1 '978f6b15539475e698533b0aeeb988b285a85894'
-
+  url 'http://download.kde.org/stable/phonon/phonon-backend-vlc/0.8.2/src/phonon-backend-vlc-0.8.2.tar.xz'
+  sha1 'bc7d57d3ecce0293b77b88eba94d091741d33e78'
   head 'git://anongit.kde.org/phonon-vlc'
 
   depends_on 'cmake' => :build

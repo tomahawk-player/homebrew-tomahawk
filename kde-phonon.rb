@@ -1,9 +1,9 @@
 require 'formula'
 
 class KdePhonon < Formula
-  url 'ftp://ftp.kde.org/pub/kde/stable/phonon/4.8.1/phonon-4.8.1.tar.xz'
+  url 'http://download.kde.org/stable/phonon/4.8.3/src/phonon-4.8.3.tar.xz'
   homepage 'http://phonon.kde.org/'
-  sha1 '652872be8144c88974aa1992de5ae705a90e3be1'
+  sha1 'aac5dc44ae4821e6165c6735b9c6063dd111ac03'
   head 'git://anongit.kde.org/phonon.git'
 
   depends_on 'cmake' => :build
