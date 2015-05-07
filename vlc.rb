@@ -9,12 +9,8 @@ class Vlc < Formula
   depends_on 'automake'
   depends_on 'pcre'
   depends_on 'gettext'
-  depends_on 'libgcrypt'
-  depends_on 'libshout'
-  depends_on 'libmad'
   depends_on 'libtool'
   depends_on 'pkg-config'
-  depends_on 'flac'
   depends_on 'yasm'
 
   def install
@@ -64,13 +60,8 @@ class Vlc < Formula
 
     # Additional Libs
     # KLN 20/08/2012 Added 'make .ogg' and 'make .vorbis' in order to get this recipe to work on OSX 10.6
-    system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer} --disable-sout"
-    system "#{exp}; cd contrib/osx; make prebuilt"
-    if MacOS.xcode_version.to_f <= 4.2
-      system "cd contrib/osx; make .ogg; make .vorbis"
-    end
-    # libav/ffmpeg in current prebuilts is too old, build a fresh one from source
-    system "cd contrib/osx; make .ffmpeg"
+    system "#{exp}; cd contrib; mkdir -p osx; cd osx; ../bootstrap --host=#{darwinVer} --build=#{darwinVer} --disable-sout --disable-ass --disable-fribidi"
+    system "#{exp}; cd contrib/osx; make"
 
     # HACK: This file is normally created by the build query git log, but homebrew appears
     # to remove the .git folder just create a blank file so that this step passes 
